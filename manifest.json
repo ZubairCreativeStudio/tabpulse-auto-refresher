@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TabPulse — Humanized Auto Refresher",
+  "version": "1.0.0",
+  "description": "Refresh one selected tab on a randomized schedule.",
+  "permissions": ["storage", "alarms", "tabs", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "TabPulse",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

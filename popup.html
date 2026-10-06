@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TabPulse</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false">
+              <path d="M5 17h5l3-7 5 13 3-8h6"></path>
+            </svg>
+          </div>
+          <div>
+            <h1>TabPulse</h1>
+            <p class="tagline">A calmer kind of refresh</p>
+          </div>
+        </div>
+        <span class="status-pill" id="status-pill" data-active="false">
+          <span class="status-dot"></span>
+          <span id="status-text">STANDBY</span>
+        </span>
+      </header>
+
+      <section class="target-card" aria-label="Selected tab">
+        <div class="card-label"><span class="target-icon" aria-hidden="true">↗</span> CURRENT PAGE</div>
+        <div class="target-domain" id="target-domain">Finding active tab…</div>
+        <div class="target-meta">TAB <span id="target-tab-id">—</span></div>
+      </section>
+
+      <section class="countdown-card" aria-label="Next refresh">
+        <div class="countdown-label" id="countdown-label">NEXT REFRESH IN</div>
+        <div class="timer" id="countdown" role="timer" aria-live="off">--:--</div>
+        <div class="window-label"><span class="window-marker"></span>Random window: <strong>04m–10m</strong></div>
+        <div class="session-stats">
+          <div><span>REFRESHES</span><strong id="refresh-count">0</strong></div>
+          <div><span>LAST REFRESH</span><strong id="last-refreshed">Not yet</strong></div>
+        </div>
+        <div class="session-note" id="session-note" hidden></div>
+      </section>
+
+      <div class="duplicate-warning" id="duplicate-warning" role="alert" aria-live="assertive" hidden></div>
+      <div class="error-message" id="error-message" role="alert" hidden></div>
+
+      <div class="actions">
+        <button class="button button-start" id="start-button" type="button">
+          <span class="button-symbol" aria-hidden="true">▶</span>
+          Start Refresh
+        </button>
+        <button class="button button-stop" id="stop-button" type="button" disabled>
+          <span class="button-symbol" aria-hidden="true">■</span>
+          Stop Refresh
+        </button>
+      </div>
+      <footer class="footer"><span class="lock-icon" aria-hidden="true">◈</span> Only this tab is affected</footer>
+    </main>
+  </body>
+</html>
